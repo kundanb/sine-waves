@@ -1,0 +1,58 @@
+#controls {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  padding: 10px;
+  opacity: 0.1;
+  background: #fff1;
+  border-radius: 3px;
+  color: #fff5;
+  font-size: 12px;
+  font-family: sans-serif;
+  transition: 0.1s;
+}
+#controls:hover {
+  opacity: 1;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+label {
+  flex: 1;
+}
+
+[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  flex: 1;
+  height: 3px;
+  margin-left: 10px;
+  background: #fff1;
+  border-radius: 3px;
+  outline: none;
+}
+[type='range']:focus {
+  background: #fff5;
+}
+
+[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: #00fa9a;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sine Waves - A Beautiful JavaScript Audio Visualizer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="controls">
+      <div class="control">
+        <label for="waves">Waves:</label>
+        <input type="range" min="1" max="20" value="5" id="waves" />
+      </div>
+      <div class="control">
+        <label for="freq">Frequency:</label>
+        <input type="range" min="1" max="20" value="5" id="freq" />
+      </div>
+      <div class="control">
+        <label for="amp">Amplitude:</label>
+        <input type="range" min="20" max="200" step="20" value="150" id="amp" />
+      </div>
+      <div class="control">
+        <label for="shift">Shift:</label>
+        <input type="range" min="1" max="20" value="5" id="shift" />
+      </div>
+      <div class="control">
+        <label for="jump">Jump:</label>
+        <input type="range" min="1" max="20" value="3" id="jump" />
+      </div>
+      <div class="control">
+        <label for="noise">Noise:</label>
+        <input type="range" min="0" max="20" value="3" id="noise" />
+      </div>
+      <div class="control">
+        <label for="harmonics">Harmonics:</label>
+        <input type="range" min="0" max="20" value="5" id="harmonics" />
+      </div>
+      <div class="control">
+        <label for="speed">Speed:</label>
+        <input type="range" min="1" max="20" value="5" id="speed" />
+      </div>
+      <div class="control">
+        <label for="hueStep">Hue Step:</label>
+        <input type="range" min="1" max="20" value="5" id="hueStep" />
+      </div>
+    </div>
+    <canvas id="canvas"></canvas>
+    <script src="script.js"></script>
+  </body>
+</html>
