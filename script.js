@@ -121,7 +121,7 @@ var animate = function (frame) {
             var y = cy;
             y += amp.val * sin((x + shift.val * w * (blow * 0.5 + beat * 0.5)) * xDeg + frameAngle);
             y += noise.val * (w + 1) * beat * sin(x * DEG + frameAngle);
-            y += harmonics.val * sin(harmonics.val * x * DEG + frameAngle);
+            y += harmonics.val * blow * sin(harmonics.val * x * DEG + frameAngle);
             context.lineTo(x, y);
         }
         context.stroke();
