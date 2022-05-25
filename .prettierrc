@@ -1,8 +1,10 @@
 {
   "arrowParens": "avoid",
+  "bracketSameLine": false,
   "bracketSpacing": true,
-  "semi": true,
-  "singleQuote": true,
   "printWidth": 128,
-  "tabWidth": 2
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "useTabs": false
 }

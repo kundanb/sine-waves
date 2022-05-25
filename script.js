@@ -9,10 +9,20 @@ var toRad = function (deg) { return deg * DEG; };
 var Control = /** @class */ (function () {
     function Control(id) {
         var _this = this;
+        this.setVal = function (val) {
+            _this.val = val;
+            _this._element.value = val.toString();
+            localStorage.setItem(_this._id, _this.val.toString());
+        };
+        this.reset = function () {
+            _this.setVal(_this.def);
+        };
+        this._id = id;
         this._element = document.getElementById(id);
         this._element.value = localStorage.getItem(id) || this._element.value;
         this.min = +this._element.min;
         this.max = +this._element.max;
+        this.def = +this._element.dataset.def;
         this.val = +this._element.value;
         this._element.addEventListener('change', function () {
             _this.val = +_this._element.value;
@@ -31,6 +41,20 @@ var noise = new Control('noise');
 var harmonics = new Control('harmonics');
 var speed = new Control('speed');
 var hueStep = new Control('hueStep');
+var smooth = new Control('smooth');
+var resetButton = document.getElementById('reset');
+resetButton.addEventListener('click', function () {
+    waves.reset();
+    freq.reset();
+    amp.reset();
+    shift.reset();
+    jump.reset();
+    noise.reset();
+    harmonics.reset();
+    speed.reset();
+    hueStep.reset();
+    smooth.reset();
+});
 // --------------------------------
 // audio
 var audio = new Audio();
@@ -104,7 +128,7 @@ var animate = function (frame) {
     var beat = (((timeData.reduce(function (a, b) { return a + abs(b - 128); }, 0) / timeData.length / 128) * 10 * jump.val) / 10) * 0.7 + 0.3;
     var blow = (((freqData.reduce(function (a, b) { return a + b; }, 0) / freqData.length / 255) * 10 * jump.val) / 10) * 0.7 + 0.3;
     context.save();
-    context.fillStyle = '#0008';
+    context.fillStyle = "rgba(0, 0, 0, ".concat(1 - smooth.val / 10, ")");
     context.fillRect(0, 0, cw, ch);
     context.restore();
     var xDeg = PI2 / (cw / freq.val);

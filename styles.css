@@ -50,6 +50,22 @@ label {
   cursor: pointer;
 }
 
+#reset {
+  padding: 0.5em 0.75em;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #00fa9a;
+  outline: none;
+  border-radius: 3px;
+  color: #00fa9a;
+  font-family: sans-serif;
+}
+#reset:hover,
+#reset:focus {
+  background: #00fa9a;
+  color: #000;
+}
+
 canvas {
   position: fixed;
   top: 0;
