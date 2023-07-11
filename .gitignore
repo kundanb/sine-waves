@@ -1,5 +1,5 @@
 # VS Code
-.vscode
+/.vscode
 
 # dependencies
-node_modules
+/node_modules
